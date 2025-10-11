@@ -27,6 +27,8 @@
                 <MenuItem Header="_Load Encrypted" Click="LoadEncrypted_Click"/>
                 <MenuItem Header="_Save Encrypted" Click="SaveEncrypted_Click"/>
                 <Separator/>
+                <MenuItem x:Name="AutoSaveMenuItem" Header="_AutoSave 10Sec" IsCheckable="True" Click="AutoSave_Click"/>
+                <Separator/>
                 <MenuItem Header="E_xit" Click="Exit_Click"/>
             </MenuItem>
         </Menu>
