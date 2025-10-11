@@ -32,6 +32,6 @@
         </Menu>
 
         <!-- Fixed margin and removed negative margin -->
-        <TextBox x:Name="MainTextBox" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True" AcceptsReturn="True" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="MainTextBox" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True" AcceptsReturn="True" Grid.ColumnSpan="2" FontFamily="Consolas"/>
     </Grid>
 </Window>

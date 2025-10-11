@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using System.ComponentModel;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -140,6 +141,36 @@ public partial class MainWindow : Window
         }
 
         Application.Current.Shutdown(); // Exit the application if no unsaved changes or if user chose not to save.
+    }
+
+    // -----------------------------------------------------------------------------------
+
+    // on application exit, check for unsaved changes
+    protected override void OnClosing(CancelEventArgs e)
+    {
+        if (_isTextChanged)
+        {
+            MessageBoxResult result = MessageBox.Show("You have unsaved changes. Do you want to save before exiting?", "Unsaved Changes", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                Save_Click(this, new RoutedEventArgs()); // Attempt to save changes.
+
+                // Check if text changed flag is still true, meaning save was cancelled.
+                if (_isTextChanged)
+                {
+                    e.Cancel = true; // Exit cancelled, return without shutting down.
+                    return;
+                }
+            }
+            else if (result == MessageBoxResult.Cancel)
+            {
+                e.Cancel = true; // Exit cancelled, return without shutting down.
+                return;
+            }
+        }
+
+        base.OnClosing(e);
     }
 
 }
