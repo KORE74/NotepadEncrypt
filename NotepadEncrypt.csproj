@@ -7,16 +7,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <AssemblyName>NotepadEncrypt</AssemblyName>
-    <ApplicationIcon>artwork\NotepadApp.ico</ApplicationIcon>
+    <ApplicationIcon>artwork\Icon.ico</ApplicationIcon>
     <PackageIcon>NotepadEncrypt.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="artwork\NotepadApp.ico" />
+    <Content Include="artwork\Icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="artwork\NotepadApp.ico">
+    <None Update="artwork\Icon.ico">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
